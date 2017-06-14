@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="za.co.mzwandile.finlitapp_crossword_puzzle.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/instructionLayout"
+        android:layout_width="338dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/instruction"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:text="Find words you associate with a bank"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/wordBoxLayout"
+        android:gravity="center"
+        android:layout_width="331dp"
+        android:layout_height="250dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/instructionLayout"
+        layout="@layout/game_layout"
+        android:layout_marginEnd="20dp" />
+
+    <LinearLayout
+        android:id="@+id/correctWordsLayout"
+        android:layout_width="333dp"
+        android:layout_height="46dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="17dp"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wordBoxLayout"
+        android:layout_marginEnd="20dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/incorrectWordLayout"
+        android:layout_width="341dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="14dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correctWordsLayout"
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginEnd="20dp">
+
+        <!--<TextView
+            android:id="@+id/constructedWordTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="empty"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />-->
+
+        <Button
+            android:id="@+id/checkWordButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="checkIfConstructedWordIsCorrect"
+            android:text="Check Word" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

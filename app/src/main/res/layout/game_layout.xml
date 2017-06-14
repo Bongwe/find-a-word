@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:padding="0dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter0_0"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="S" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter0_1"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="A" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter0_2"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="V" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter0_3"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="E" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter0_4"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="G"
+          />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter1_0"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter1_1"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="D" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter1_2"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="W" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter1_3"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="R" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter1_4"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="R"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter2_0"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter2_1"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="A" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter2_2"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="R" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter2_3"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="N" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter2_4"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="O"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter3_0"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Q" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter3_1"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="V" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter3_2"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="X" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter3_3"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="O" />
+
+        <TextView
+            android:onClick="getSelectedLetter"
+            android:id="@+id/letter3_4"
+            style="@style/boxForALetter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="W"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
