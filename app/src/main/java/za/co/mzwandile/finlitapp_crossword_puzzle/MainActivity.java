@@ -8,11 +8,16 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private String[] correctWords = {"save","grow","earn"};
     private String constructedWord = "";
     private int correctWordTextViewID = 0;
+    private List<TextView> selectedTextViews = new LinkedList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,16 +31,17 @@ public class MainActivity extends AppCompatActivity {
 
         clickedView = (TextView)view;
         clickedButtonText = clickedView.getText().toString();
+        clickedView.setBackgroundResource(R.drawable.pressed_color);
+        selectedTextViews.add(clickedView);
         stringBuilder = new StringBuilder(constructedWord);
 
         stringBuilder.append(clickedButtonText);
         constructedWord = stringBuilder.toString();
-
     }
 
     public void checkIfConstructedWordIsCorrect(View view){
-        TextView constructedWordView;
         String message = " is incorrect!";
+        changeBackgroundColor();
         for (int i = 0; i < correctWords.length;i++){
             if (correctWords[i].toUpperCase().equals(constructedWord)) {
                 createCorrectWordTextView(constructedWord);
@@ -45,6 +51,16 @@ public class MainActivity extends AppCompatActivity {
         }
         createInCorrectWordTextView(constructedWord);
         constructedWord = "";
+    }
+
+    private void changeBackgroundColor(){
+        Iterator iterator = selectedTextViews.iterator();
+
+        while (iterator.hasNext()){
+            TextView view = (TextView) iterator.next();
+            view.setBackgroundResource(R.drawable.normal_color);
+        }
+        selectedTextViews.clear();
     }
 
     private void createCorrectWordTextView(String word){
