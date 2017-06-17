@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="greenButtonStyle">
+   <!-- <style name="greenButtonStyle">
         <item name="android:layout_width">57dp</item>
         <item name="android:layout_height">59dp</item>
         <item name="android:width">50dp</item>
@@ -16,12 +16,11 @@
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:layout_marginLeft">0dp</item>
         <item name="android:background">#009688</item>
-    </style>
+    </style>-->
 
-    <style name="boxForALetter">
+    <style name="puzzle_block_style">
         <item name="android:width">50dp</item>
         <item name="android:height">50dp</item>
-      <!--  <item name="android:background">#A7E1FF</item>-->
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">30sp</item>
     </style>
