@@ -1,18 +1,25 @@
 package za.co.mzwandile.finlitapp_crossword_puzzle;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.accessibility.AccessibilityManager;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.Console;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+
+import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,102 +34,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setOnTouchListenerOnLayout();
-        setOnTouchListenerOnButon();
-    }
-
-    private void setOnTouchListenerOnButon(){
-        final int ROWS = 4;
-        final int COLS = 5;
-        final int SIZE = 4;
-        final LinearLayout puzzleBoxLayout[] = new LinearLayout[SIZE];
-
-        puzzleBoxLayout[0] = (LinearLayout) findViewById(R.id.puzzle_box_layout_0);
-        puzzleBoxLayout[1] = (LinearLayout) findViewById(R.id.puzzle_box_layout_1);
-        puzzleBoxLayout[2] = (LinearLayout) findViewById(R.id.puzzle_box_layout_2);
-        puzzleBoxLayout[3] = (LinearLayout) findViewById(R.id.puzzle_box_layout_3);
-
-        for( int row = 0;row < ROWS; row++) {
-            final LinearLayout currentLayout = puzzleBoxLayout[row];
-            for( int col = 0;col < COLS; col++) {
-                TextView currentView = (TextView) currentLayout.getChildAt(col);
-                currentView.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        if (event.getAction() == MotionEvent.ACTION_UP) {
-                            v.setBackgroundResource(R.drawable.normal_color);
-                        }
-                        return true;
-                    }
-                });
-            }
-        }
     }
 
     private void setOnTouchListenerOnLayout(){
-        final int ROWS = 4;
-        final int COLS = 5;
-        final int SIZE = 4;
-        final LinearLayout puzzleBoxLayout[] = new LinearLayout[SIZE];
 
-        puzzleBoxLayout[0] = (LinearLayout) findViewById(R.id.puzzle_box_layout_0);
-        puzzleBoxLayout[1] = (LinearLayout) findViewById(R.id.puzzle_box_layout_1);
-        puzzleBoxLayout[2] = (LinearLayout) findViewById(R.id.puzzle_box_layout_2);
-        puzzleBoxLayout[3] = (LinearLayout) findViewById(R.id.puzzle_box_layout_3);
+        final GridLayout gameGridLayout = (GridLayout) findViewById(R.id.puzzle_grid_layout);
+        gameGridLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
 
-        for( int row = 0;row < ROWS; row++) {
-            final LinearLayout currentLayout =  puzzleBoxLayout[row];
-            currentLayout.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    int x = (int) event.getX();
-                    int y = (int) event.getY();
+                int x = (int) event.getX();
+                int y = (int) event.getY();
+
+                for (int i = 0; i < gameGridLayout.getChildCount(); i++) {
+                    TextView view = (TextView) gameGridLayout.getChildAt(i);
 
                     if (event.getAction() == MotionEvent.ACTION_UP) {
-                        for (int i = 0; i < currentLayout.getChildCount(); i++) {
-                            TextView view = (TextView) currentLayout.getChildAt(i);
-                            view.setBackgroundResource(R.drawable.normal_color);
+                        view.setBackgroundResource(R.drawable.normal_color);
+                    }
+
+                    if(event.getAction() == MotionEvent.ACTION_MOVE) {
+                        if (isPointWithin(x, y, view.getLeft(), view.getRight(),
+                                view.getTop(), view.getBottom())) {
+                            view.setBackgroundResource(R.drawable.pressed_color);
                         }
                     }
-
-                    for (int i = 0; i < currentLayout.getChildCount(); i++) {
-                        TextView view = (TextView) currentLayout.getChildAt(i);
-                       /* if (!isPointWithin(x, y, view.getLeft(), view.getRight(), view.getTop(),
-                                view.getBottom())) {
-                            view.setBackgroundResource(R.drawable.normal_color);
-                        }*/
-                     /*  if(event.getAction() == MotionEvent.ACTION_DOWN){*/
-                           if (isPointWithin(x, y, view.getLeft(), view.getRight(), view.getTop(),
-                                   view.getBottom())) {
-                               view.setBackgroundResource(R.drawable.pressed_color);
-                           }
-                      /* }*/
-
-                    }
-                    return true;
                 }
-            });
-        }
-
-
-       /* for(int row = 0;row < ROWS; row++){
-            TextView view;
-            for(int col = 0; col < COLS;col++){
-                view = (TextView) puzzleBoxLayout[row].getChildAt(col);
-                view.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        *//*if(event.getAction() == MotionEvent.ACTION_MOVE){
-                            createCorrectWordTextView( "touchd" );
-                          *//**//*  createCorrectWordTextView( v.getId() + "" );*//**//*
-                            *//**//*v.setBackgroundResource(R.drawable.pressed_color);*//**//*
-                            // Do what you want
-                            return true;
-                        }*//*
-                        return true;
-                    }
-                });
+                return true;
             }
-        }*/
+        });
     }
 
     private boolean isPointWithin(int x, int y, int x1, int x2, int y1, int y2) {
@@ -130,13 +70,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getSelectedLetter(View view){
+        Log.v("getSelectedLetter","pressed!");
         String clickedButtonText;
         TextView clickedView;
         StringBuilder stringBuilder;
 
         clickedView = (TextView)view;
         clickedButtonText = clickedView.getText().toString();
-        clickedView.setBackgroundResource(R.drawable.pressed_color);
+       /* clickedView.setBackgroundResource(R.drawable.pressed_color);*/
         selectedTextViews.add(clickedView);
         stringBuilder = new StringBuilder(constructedWord);
 
