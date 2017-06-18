@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <drawable name="pressed_color">#C7969B</drawable> <!--custom color for pressed state -->
-    <drawable name="normal_color">#ffffff</drawable> <!--transperent color for normal state -->
+    <drawable name="normal_color">#ffffff</drawable>
+    <drawable name="focused_color">#89874C</drawable>
 </resources>
