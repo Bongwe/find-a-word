@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/game_grid_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="5"
+    android:rowCount="4">
+
+    <!--row 1-->
+    <TextView
+        android:id="@+id/letter0_0"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="S" />
+
+    <TextView
+        android:id="@+id/letter0_1"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="A" />
+
+    <TextView
+        android:id="@+id/letter0_2"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="V" />
+
+    <TextView
+        android:id="@+id/letter0_3"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="E" />
+
+    <TextView
+        android:id="@+id/letter0_4"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="G" />
+
+    <!--row 2-->
+    <TextView
+        android:id="@+id/letter1_0"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="A" />
+
+    <TextView
+        android:id="@+id/letter1_1"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="D" />
+
+    <TextView
+        android:id="@+id/letter1_2"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="W" />
+
+    <TextView
+        android:id="@+id/letter1_3"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="R" />
+
+    <TextView
+        android:id="@+id/letter1_4"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="R" />
+
+    <!--row 3-->
+    <TextView
+        android:id="@+id/letter2_0"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="E" />
+
+    <TextView
+        android:id="@+id/letter2_1"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="A" />
+
+    <TextView
+        android:id="@+id/letter2_2"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="R" />
+
+    <TextView
+        android:id="@+id/letter2_3"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="N" />
+
+    <TextView
+        android:id="@+id/letter2_4"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="O" />
+
+    <!--row 4-->
+    <TextView
+        android:id="@+id/letter3_0"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="Q" />
+
+    <TextView
+        android:id="@+id/letter3_1"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="V" />
+
+    <TextView
+        android:id="@+id/letter3_2"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="X" />
+
+    <TextView
+        android:id="@+id/letter3_3"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="O" />
+
+    <TextView
+        android:id="@+id/letter3_4"
+        style="@style/puzzle_block_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:onClick="getSelectedLetter"
+        android:background="@drawable/puzzle_box"
+        android:text="W" />
+
+</GridLayout>
