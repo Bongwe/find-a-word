@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.GridLayout;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private List<TextView> selectedPuzzleBoxes = new LinkedList<>();
     private LinearLayout mainLayout;
     private GridLayout puzzleLayout;
+    private int currentView = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(event.getAction() == MotionEvent.ACTION_UP) {
+                    getSelectedPuzzleBoxes();
                     unHighLightDeselectedPuzzleBoxes(v, event);
+                    checkIfConstructedWordIsCorrect();
                 }
 
                 return true;
@@ -70,14 +74,26 @@ public class MainActivity extends AppCompatActivity {
 
         for(int puzzleBox = 0; puzzleBox < puzzleLayout.getChildCount();puzzleBox++){
             TextView currentPuzzleBox = (TextView) puzzleLayout.getChildAt(puzzleBox);
+            Log.v("TextView IDs",currentView + " " + view.getId());
             if (isPointWithin(x, y, currentPuzzleBox.getLeft(), currentPuzzleBox.getRight(),
                     currentPuzzleBox.getTop(), currentPuzzleBox.getBottom())) {
-                selectedPuzzleBoxes.add(currentPuzzleBox);
+                if(!puzzleBoxSelected(currentPuzzleBox)) {
+                    selectedPuzzleBoxes.add(currentPuzzleBox);
+                }
                 currentPuzzleBox.setBackgroundResource(R.drawable.pressed_color);
             }
         }
     }
 
+    private boolean puzzleBoxSelected(TextView selectedBox){
+        for(int puzzleBox = 0; puzzleBox < selectedPuzzleBoxes.size();puzzleBox++){
+            TextView currentBox = selectedPuzzleBoxes.get(puzzleBox);
+            if(selectedBox.getId() == currentBox.getId()){
+                return true;
+            }
+        }
+        return false;
+    }
     private void unHighLightDeselectedPuzzleBoxes(View view, MotionEvent event){
         if(event.getAction() == MotionEvent.ACTION_UP) {
             for(int puzzleBox = 0; puzzleBox < selectedPuzzleBoxes.size();puzzleBox++){
@@ -91,32 +107,35 @@ public class MainActivity extends AppCompatActivity {
         return (x <= x2 && x >= x1 && y <= y2 && y >= y1);
     }
 
-    public void getSelectedLetter(View view){
-        String clickedButtonText;
-        TextView clickedView;
-        StringBuilder stringBuilder;
+    public void getSelectedPuzzleBoxes(){
 
-        clickedView = (TextView)view;
-        clickedButtonText = clickedView.getText().toString();
-        selectedTextViews.add(clickedView);
-        stringBuilder = new StringBuilder(constructedWord);
-
-        stringBuilder.append(clickedButtonText);
+        StringBuilder stringBuilder = new StringBuilder(constructedWord);
+        for(int puzzleBox = 0; puzzleBox < selectedPuzzleBoxes.size();puzzleBox++){
+            TextView selectedPuzzleBox = selectedPuzzleBoxes.get(puzzleBox);
+            stringBuilder.append(selectedPuzzleBox.getText());
+        }
         constructedWord = stringBuilder.toString();
     }
 
-    public void checkIfConstructedWordIsCorrect(View view){
-        String message = constructedWord +" is incorrect!";
+    public void checkIfConstructedWordIsCorrect(){
+        String message = constructedWord +" is incorrect.";
         changeBackgroundColor();
         for (int i = 0; i < correctWords.length;i++){
             if (correctWords[i].toUpperCase().equals(constructedWord)) {
+                Toast.makeText(getApplicationContext(), constructedWord + " is correct!",
+                        Toast.LENGTH_SHORT).show();
                 createCorrectWordTextView(constructedWord);
-                constructedWord = "";
+                resetVariables();
                 return;
             }
         }
         Toast.makeText(getApplicationContext(), message,
                 Toast.LENGTH_SHORT).show();
+        resetVariables();
+    }
+
+    private void resetVariables(){
+        selectedPuzzleBoxes.clear();
         constructedWord = "";
     }
 
