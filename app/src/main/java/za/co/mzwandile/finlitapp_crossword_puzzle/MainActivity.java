@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.GridLayout;
@@ -24,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private List<TextView> selectedPuzzleBoxes = new LinkedList<>();
     private LinearLayout mainLayout;
     private GridLayout puzzleLayout;
-    //private List<TextView> puzzleBoxes = new LinkedList<>();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
