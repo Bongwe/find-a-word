@@ -12,9 +12,9 @@
         style="@style/puzzle_block_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
         android:background="@drawable/puzzle_box"
+        android:clickable="false"
+        android:contextClickable="false"
         android:text="S" />
 
     <TextView
@@ -23,9 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
         android:background="@drawable/puzzle_box"
+        android:clickable="false"
         android:text="A" />
 
     <TextView
@@ -34,8 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="V" />
 
@@ -45,8 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="E" />
 
@@ -56,8 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="G" />
 
@@ -67,8 +63,7 @@
         style="@style/puzzle_block_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="A" />
 
@@ -78,8 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="D" />
 
@@ -89,8 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="W" />
 
@@ -100,8 +93,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="R" />
 
@@ -111,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="R" />
 
@@ -121,8 +113,7 @@
         style="@style/puzzle_block_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="E" />
 
@@ -132,8 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="A" />
 
@@ -143,8 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="R" />
 
@@ -154,8 +143,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="N" />
 
@@ -165,8 +153,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="O" />
 
@@ -176,8 +163,7 @@
         style="@style/puzzle_block_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="Q" />
 
@@ -187,8 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="V" />
 
@@ -198,8 +183,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="X" />
 
@@ -209,8 +193,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="O" />
 
@@ -220,8 +203,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:clickable="true"
-        android:onClick="getSelectedLetter"
+        android:clickable="false"
         android:background="@drawable/puzzle_box"
         android:text="W" />
 
