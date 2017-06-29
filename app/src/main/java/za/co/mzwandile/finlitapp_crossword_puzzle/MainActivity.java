@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
         setTouchListenerOnMainLayout();
         setTouchListenerOnPuzzleLayout();
+        PuzzleReader puzzleReader = new PuzzleReader(this);
+
     }
 
     private void setTouchListenerOnMainLayout(){
